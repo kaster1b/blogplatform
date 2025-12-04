@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <div id="authSection" class="container auth-container">
+        <div class="auth-card">
+            <h1>Blog Platform</h1>
+            <div class="auth-toggle">
+                <button id="loginBtn" class="toggle-btn active">Login</button>
+                <button id="signupBtn" class="toggle-btn">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="loginError" class="error-message"></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Name</label>
+                    <input type="text" id="signupName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" required placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <p id="signupError" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Section -->
+    <div id="appSection" class="container app-container hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>My Blog</h1>
+                <div class="user-info">
+                    <span id="userName"></span>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Create Blog Section -->
+        <section class="create-blog-section">
+            <div class="create-blog-card">
+                <h2>Create New Blog Post</h2>
+                <form id="createBlogForm">
+                    <div class="form-group">
+                        <label for="blogTitle">Title</label>
+                        <input type="text" id="blogTitle" required placeholder="Blog post title">
+                    </div>
+                    <div class="form-group">
+                        <label for="blogContent">Content</label>
+                        <textarea id="blogContent" required placeholder="Write your blog post..." rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Publish Post</button>
+                    <p id="createBlogError" class="error-message"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="blog-posts-section">
+            <div class="blog-posts-header">
+                <h2>Blog Posts</h2>
+                <select id="sortBy" class="sort-select">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+            <div id="blogPostsContainer" class="blog-posts-container">
+                <p class="loading">Loading posts...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
